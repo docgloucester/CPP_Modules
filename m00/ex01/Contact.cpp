@@ -6,14 +6,14 @@
 /*   By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/04 16:04:06 by rgilles           #+#    #+#             */
-/*   Updated: 2021/09/05 16:10:04 by rgilles          ###   ########.fr       */
+/*   Updated: 2021/09/05 20:27:31 by rgilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Contact.hpp>
 
-Contact::Contact(std::string fn, std::string ln, std::string nn, std::string pn,
-	std::string ds) : FirstName(fn), LastName(ln), Nickname(nn), PhoneNumber(pn), DarkestSecret(ds)
+Contact::Contact(std::string *strs) : FirstName(strs[0]), LastName(strs[1]),
+	Nickname(strs[2]), PhoneNumber(strs[3]), DarkestSecret(strs[4])
 {
 
 }
