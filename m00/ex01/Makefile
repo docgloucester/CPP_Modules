@@ -12,14 +12,14 @@
 
 NAME =		phonebook
 CPPC =		clang++
-CPPFLAGS =	-Wall -Wextra -Werror -std=c++98 -g3
+CPPFLAGS =	-Wall -Wextra -Werror -std=c++98 -g3 -I.
 
-INCL =
-SRCS =		
-OBJS = 		${SRCS:.cpp=.o}
+INCL =		Contact.hpp PhoneBook.hpp
+SRCS =		Contact.cpp PhoneBook.cpp main.cpp	
+OBJS =		${SRCS:.cpp=.o}
 
 
-%.o:		${INCL} %.cpp
+%.o:		%.cpp ${INCL}
 	${CPPC} ${CPPFLAGS} -c $< -o $@
 
 all:		${NAME}
