@@ -6,7 +6,7 @@
 /*   By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/04 16:04:17 by rgilles           #+#    #+#             */
-/*   Updated: 2021/09/05 20:40:03 by rgilles          ###   ########.fr       */
+/*   Updated: 2021/09/06 18:12:11 by rgilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ int	main(void)
 				<< std::endl;
 	while (cmd != "EXIT")
 	{
-		std::cout << "debug" << cmd << std::endl;
-		std::cout << "Please enter a command belowwww :" << std::endl << "> ";
+		std::cout << "Please enter a command below :" << std::endl << "> ";
 		std::getline(std::cin, cmd);
 		if (cmd == "ADD")
 			mybook.addContact();
@@ -33,10 +32,11 @@ int	main(void)
 			mybook.listContacts();
 			std::cout << "Enter desired contact ID:" << std::endl << "> ";
 			std::cin >> id;
+			std::cin.ignore (80, '\n');
 			mybook.displayContact(id);
 		}
 		else if (cmd != "EXIT")
-			std::cout << "Please enter a valid command." << std::endl;
+			std::cout << "\"" << cmd << "\" is invalid. Please enter a valid command." << std::endl;
 	}
 	return (0);
 }
