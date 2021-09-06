@@ -6,14 +6,13 @@
 /*   By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/04 16:04:06 by rgilles           #+#    #+#             */
-/*   Updated: 2021/09/05 20:27:31 by rgilles          ###   ########.fr       */
+/*   Updated: 2021/09/06 19:29:51 by rgilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Contact.hpp>
 
-Contact::Contact(std::string *strs) : FirstName(strs[0]), LastName(strs[1]),
-	Nickname(strs[2]), PhoneNumber(strs[3]), DarkestSecret(strs[4])
+Contact::Contact()
 {
 
 }
@@ -21,6 +20,15 @@ Contact::Contact(std::string *strs) : FirstName(strs[0]), LastName(strs[1]),
 Contact::~Contact(void)
 {
 
+}
+
+void		Contact::fillFields(std::string *strs)
+{
+	this->FirstName = strs[0];
+	this->LastName = strs[1];
+	this->Nickname = strs[2];
+	this->PhoneNumber = strs[3];
+	this->DarkestSecret = strs[4];
 }
 
 std::string	Contact::getField(int field) const

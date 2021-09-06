@@ -6,7 +6,7 @@
 /*   By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/04 16:04:00 by rgilles           #+#    #+#             */
-/*   Updated: 2021/09/05 20:30:47 by rgilles          ###   ########.fr       */
+/*   Updated: 2021/09/06 19:25:56 by rgilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,16 @@
 # define CONTACT_HPP
 
 # include <iostream>
+# include <iomanip>
 
 class	Contact
 {
 public:
-	Contact(std::string *strs);
+	Contact();
 	~Contact(void);
 
 	std::string	getField(int field) const;
+	void		fillFields(std::string *strs);
 
 private:
 	std::string	FirstName;

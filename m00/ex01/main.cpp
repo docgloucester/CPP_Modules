@@ -6,7 +6,7 @@
 /*   By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/04 16:04:17 by rgilles           #+#    #+#             */
-/*   Updated: 2021/09/06 18:12:11 by rgilles          ###   ########.fr       */
+/*   Updated: 2021/09/06 18:48:40 by rgilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,12 @@ int	main(void)
 			mybook.listContacts();
 			std::cout << "Enter desired contact ID:" << std::endl << "> ";
 			std::cin >> id;
-			std::cin.ignore (80, '\n');
 			mybook.displayContact(id);
+			std::cin.ignore (80, '\n');
 		}
 		else if (cmd != "EXIT")
-			std::cout << "\"" << cmd << "\" is invalid. Please enter a valid command." << std::endl;
+			std::cout << "\"" << cmd << "\" is invalid. Please enter a valid command "
+				<< "such as \"ADD\", \"SEARCH\" or \"EXIT\"." << std::endl;
 	}
 	return (0);
 }

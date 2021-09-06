@@ -6,7 +6,7 @@
 /*   By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/04 16:04:33 by rgilles           #+#    #+#             */
-/*   Updated: 2021/09/05 20:35:12 by rgilles          ###   ########.fr       */
+/*   Updated: 2021/09/06 18:52:58 by rgilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	PhoneBook::addContact(void)
 		std::getline(std::cin, fields[3]);
 		std::cout << "Any gossip? (:" << std::endl << "> ";
 		std::getline(std::cin, fields[4]);
-		this->myContacts[this->contactCount] = new Contact(fields);
+		this->myContacts[this->contactCount].fillFields(fields);
 		this->contactCount++;
 		return ;
 	}
@@ -47,24 +47,40 @@ void	PhoneBook::addContact(void)
 
 void	PhoneBook::listContacts(void)
 {
-	std::cout << "Index     |First Name|Last Name |Nickname  " << std::endl;
+	std::string	field;
+	int	fieldid;
+
+	std::cout << "|ID        |First Name|Last Name |Nickname  |" << std::endl;
 	for (int i = 0; i < contactCount; i++)
 	{
-		std::cout << "placeholder |";
-		std::cout << std::endl;
+		fieldid = -1;
+			std::cout << "|" << std::setw(10) << i << "|";
+			while (++fieldid < 3)
+			{
+				field = this->myContacts[i].getField(fieldid);
+				if (field.size() > 10)
+				{
+					field.resize(9);
+					field += ".";
+				}
+				std::cout << std::setw(10) << field << "|";
+			}
+			std::cout << std::endl;
 	}
 }
 
 void	PhoneBook::displayContact(int id)
 {
-	if (id <= this->contactCount)
+	if (!std::cin.fail() && id >= 0 && id < this->contactCount)
 	{
-		std::cout << "First Name: " << this->myContacts[id]->getField(0) << std::endl;
-		std::cout << "Last Name: " << this->myContacts[id]->getField(1) << std::endl;
-		std::cout << "Nickname: " << this->myContacts[id]->getField(2) << std::endl;
-		std::cout << "Phone Nr: " << this->myContacts[id]->getField(3) << std::endl;
-		std::cout << "Darkest Secret: " << this->myContacts[id]->getField(4) << std::endl;
+		std::cout << "First Name: " << this->myContacts[id].getField(0) << std::endl;
+		std::cout << "Last Name: " << this->myContacts[id].getField(1) << std::endl;
+		std::cout << "Nickname: " << this->myContacts[id].getField(2) << std::endl;
+		std::cout << "Phone Nr: " << this->myContacts[id].getField(3) << std::endl;
+		std::cout << "Darkest Secret: " << this->myContacts[id].getField(4) << std::endl;
 	}
 	else
 		std::cout << "Invalid contact ID" << std::endl;
+	if (std::cin.fail())
+		std::cin.clear();
 }
