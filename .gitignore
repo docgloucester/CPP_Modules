@@ -1,0 +1,7 @@
+*.o
+phonebook
+megaphone
+phonebook
+tests.cpp
+Account.hpp
+*.log
