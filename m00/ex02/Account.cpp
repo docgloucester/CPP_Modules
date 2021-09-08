@@ -23,7 +23,7 @@ Account::Account(int initial_deposit) : _amount(initial_deposit), _nbDeposits(0)
 	this->_accountIndex = Account::_nbAccounts++;
 	Account::_totalAmount += this->_amount;
 	Account::_displayTimestamp();
-	std::cout << " index:" << this->_accountIndex;
+	std::cout << "index:" << this->_accountIndex;
 	std::cout << ";amount:" << this->_amount;
 	std::cout << ";created" << std::endl;
 }
@@ -31,7 +31,7 @@ Account::Account(int initial_deposit) : _amount(initial_deposit), _nbDeposits(0)
 Account::~Account(void) 
 {
 	Account::_displayTimestamp();
-	std::cout << " index:" << this->_accountIndex;
+	std::cout << "index:" << this->_accountIndex;
 	std::cout << ";amount:" << this->_amount;
 	std::cout << ";closed" << std::endl;
 
@@ -44,7 +44,7 @@ Account::~Account(void)
 void	Account::makeDeposit(int deposit) 
 {
 	Account::_displayTimestamp();
-	std::cout << " index:" << this->_accountIndex;
+	std::cout << "index:" << this->_accountIndex;
 	std::cout << ";p_amount:" << this->_amount;
 	std::cout << ";deposit:" << deposit;
 	this->_amount += deposit;
@@ -59,7 +59,7 @@ void	Account::makeDeposit(int deposit)
 bool	Account::makeWithdrawal(int withdrawal) 
 {
 	Account::_displayTimestamp();
-	std::cout << " index:" << this->_accountIndex;
+	std::cout << "index:" << this->_accountIndex;
 	std::cout << ";p_amount:" << this->_amount;
 	std::cout << ";withdrawal:";
 	if (this->_amount >= withdrawal)
@@ -78,15 +78,15 @@ bool	Account::makeWithdrawal(int withdrawal)
 	return (false);
 }
 
-int		Account::checkAmount(void) const 
+/*int		Account::checkAmount(void) const 
 {
-	return (this->_amount);
-}
+
+}*/
 
 void	Account::displayStatus(void) const 
 {
 	Account::_displayTimestamp();
-	std::cout << " index:" << this->_accountIndex;
+	std::cout << "index:" << this->_accountIndex;
 	std::cout << ";amount:" << this->_amount;
 	std::cout << ";deposits:" << this->_nbDeposits;
 	std::cout << ";withdrawals:" << this->_nbWithdrawals;
@@ -97,10 +97,10 @@ void	Account::displayStatus(void) const
 //                         Private Instance Functions                         //
 // ************************************************************************** //
 
-Account::Account(void) 
+/*Account::Account(void) 
 {
-	
-}
+
+}*/
 
 // ************************************************************************** //
 //                           Public Class Functions                           //
@@ -134,7 +134,7 @@ int Account::getNbWithdrawals(void)
 void Account::displayAccountsInfos(void) 
 {
 	Account::_displayTimestamp();
-	std::cout << " accounts:" << Account::getNbAccounts();
+	std::cout << "accounts:" << Account::getNbAccounts();
 	std::cout << ";total:" << Account::getTotalAmount();
 	std::cout << ";deposits:" << Account::getNbDeposits();
 	std::cout << ";withdrawals:" << Account::getNbWithdrawals() << std::endl;
@@ -153,5 +153,5 @@ void	Account::_displayTimestamp(void)
 	time(&timestamp);
 	strftime(buff, sizeof(buff), "%Y%m%d_%H%M%S", localtime(&timestamp));
 
-	std::cout << "[" << buff << "]";
+	std::cout << "[" << buff << "] ";
 }
