@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/08 23:12:29 by rgilles           #+#    #+#             */
-/*   Updated: 2021/09/09 00:30:23 by rgilles          ###   ########.fr       */
+/*   Created: 2021/09/08 14:50:56 by rgilles           #+#    #+#             */
+/*   Updated: 2021/09/09 00:49:24 by rgilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include <Zombie.hpp>
 
-void	randomChump(std::string name);
-Zombie*	newZombie(std::string name);
-
-
-int	main(void)
+Zombie::Zombie()
 {
-	Zombie* heapZombie = newZombie("Theodule");
-	randomChump("Martheline");
-	heapZombie->announce();
-	delete heapZombie;
-	return (0);
+	std::cout << "A zombie just spawned. But where??" << std::endl;
+}
+
+Zombie::~Zombie()
+{
+	std::cout << this->_name << " has been slain by the sword of doom." << std::endl;
+}
+
+void	Zombie::announce(void) 
+{
+	std::cout << "<" << this->_name << "> BraiiiiiiinnnzzzZ..." << std::endl;
+}
+
+void	Zombie::setName(std::string name)
+{
+	this->_name = name;
 }

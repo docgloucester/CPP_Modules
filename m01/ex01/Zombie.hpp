@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/08 23:12:29 by rgilles           #+#    #+#             */
-/*   Updated: 2021/09/09 00:30:23 by rgilles          ###   ########.fr       */
+/*   Created: 2021/09/08 14:50:56 by rgilles           #+#    #+#             */
+/*   Updated: 2021/09/09 00:46:41 by rgilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Zombie.hpp>
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-void	randomChump(std::string name);
-Zombie*	newZombie(std::string name);
+# include <iostream>
 
-
-int	main(void)
+class Zombie
 {
-	Zombie* heapZombie = newZombie("Theodule");
-	randomChump("Martheline");
-	heapZombie->announce();
-	delete heapZombie;
-	return (0);
-}
+public:
+
+	Zombie();
+	~Zombie();
+	void	announce(void);
+	void	setName(std::string name);
+
+private:
+
+	std::string _name;
+};
+
+#endif
