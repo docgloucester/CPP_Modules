@@ -6,7 +6,7 @@
 /*   By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 09:38:31 by rgilles           #+#    #+#             */
-/*   Updated: 2021/09/10 10:03:07 by rgilles          ###   ########.fr       */
+/*   Updated: 2021/09/11 12:11:17 by rgilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 
 class HumanA {
 public:
-	HumanA(std::string name, Weapon wp);
+	HumanA(std::string name, Weapon& wp);
 	~HumanA();
 	void	attack(void) const;
 private:
 	std::string _name;
-	Weapon	_gear;
+	Weapon&	_gear;
 };
 
 #endif

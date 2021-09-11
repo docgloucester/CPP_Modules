@@ -6,7 +6,7 @@
 /*   By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 09:34:46 by rgilles           #+#    #+#             */
-/*   Updated: 2021/09/10 10:03:06 by rgilles          ###   ########.fr       */
+/*   Updated: 2021/09/11 11:27:32 by rgilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@
 class Weapon
 {
 public:
-	Weapon();
+	Weapon(std::string type);
 	~Weapon();
 
 	void		setType(std::string type);
 	std::string	getType(void) const;
 
 private:
-	std::string	type;
+	std::string	_type;
 };
 
 #endif

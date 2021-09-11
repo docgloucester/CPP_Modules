@@ -6,7 +6,7 @@
 /*   By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 09:38:39 by rgilles           #+#    #+#             */
-/*   Updated: 2021/09/10 10:04:16 by rgilles          ###   ########.fr       */
+/*   Updated: 2021/09/11 12:11:58 by rgilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ HumanB::~HumanB()
 
 }
 
-void HumanB::equipWeapon(Weapon *wp) 
+void HumanB::setWeapon(Weapon& wp) 
 {
-	this->_gear = wp;
+	this->_gear = &wp;
 	std::cout << this->_name << " has equipped a " << this->_gear->getType() << std::endl;
 }
 

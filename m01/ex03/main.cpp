@@ -6,7 +6,7 @@
 /*   By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 09:51:37 by rgilles           #+#    #+#             */
-/*   Updated: 2021/09/10 10:09:12 by rgilles          ###   ########.fr       */
+/*   Updated: 2021/09/11 11:34:13 by rgilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,19 @@
 #include <HumanA.hpp>
 #include <HumanB.hpp>
 
-int	main(void)
+int main()
 {
-	Weapon	weaponA;
-	Weapon	weaponB;
+	Weapon club = Weapon("crude spiked club");
+	HumanA bob("Bob", club);
+	bob.attack();
+	club.setType("other type of club");
+	bob.attack();
 
-	weaponA.setType("butter knife");
-	weaponB.setType("deadly gaze");
-
-	HumanA humanA("Marcel", weaponA);
-	HumanB humanB("Gerard Fliboudin");
-
-	humanA.attack();
-	humanB.attack();
-	humanB.equipWeapon(&weaponB);
-	humanB.attack();
-
-	return (0);
+	Weapon club2 = Weapon("crude spiked club");
+	HumanB jim("Jim");
+	jim.attack();
+	jim.setWeapon(club2);
+	jim.attack();
+	club2.setType("some other type of club");
+	jim.attack();
 }
