@@ -6,12 +6,12 @@
 #    By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/04 14:47:57 by rgilles           #+#    #+#              #
-#    Updated: 2021/09/11 12:19:05 by rgilles          ###   ########.fr        #
+#    Updated: 2021/09/15 14:06:44 by rgilles          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =		replace-o\'matic
-CPPC =		clang++
+NAME =		replace
+CPPC =		clang++-9
 CPPFLAGS =	-Wall -Wextra -Werror -std=c++98 -g3 -I.
 
 INCL =
