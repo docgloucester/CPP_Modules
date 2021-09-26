@@ -6,14 +6,15 @@
 /*   By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 12:17:32 by rgilles           #+#    #+#             */
-/*   Updated: 2021/09/15 15:32:46 by rgilles          ###   ########.fr       */
+/*   Updated: 2021/09/26 19:18:26 by rgilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
+#include <sstream>
 
-int	sanitize_input(std::fstream& input, std::fstream& output, int argc, char** argv)
+int	sanitize_input(std::ifstream& input, std::ofstream& output, int argc, char** argv)
 {
 	std::string		output_name;
 
@@ -45,26 +46,25 @@ int	sanitize_input(std::fstream& input, std::fstream& output, int argc, char** a
 	return (0);
 }
 
-
-
-
 int	main(int argc, char** argv)
 {
-	std::fstream	input;
-	std::fstream	output;
-	std::string		line;
-	std::size_t		pos;
+	std::ifstream		input;
+	std::ostringstream	input_to_file;
+	std::ofstream		output;
+	std::string			file;
+	std::size_t			pos;
 
 	if (sanitize_input(input, output, argc, argv))
 		return (1);
-	input.getline(line, );
+	input_to_file << input.rdbuf();
+	file = input_to_file.str();
+	input.close();
 	while ((pos = file.find(argv[2])) != std::string::npos)
 	{
 		file.erase(pos, std::string(argv[2]).size());
 		file.insert(pos, argv[3]);
 	}
 	output << file;
-	input.close();
 	output.close();
 	return (0);
 }
