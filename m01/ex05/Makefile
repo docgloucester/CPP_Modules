@@ -6,7 +6,7 @@
 #    By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/04 14:47:57 by rgilles           #+#    #+#              #
-#    Updated: 2021/09/09 00:53:51 by rgilles          ###   ########.fr        #
+#    Updated: 2021/09/30 13:10:03 by rgilles          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,8 @@ NAME =		karen
 CPPC =		clang++
 CPPFLAGS =	-Wall -Wextra -Werror -std=c++98 -g3 -I.
 
-INCL =		
-
-SRCS =		main.cpp
+INCL =		Karen.hpp
+SRCS =		main.cpp Karen.cpp
 OBJS =		${SRCS:.cpp=.o}
 
 
