@@ -5,21 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/09 00:24:24 by rgilles           #+#    #+#             */
-/*   Updated: 2021/10/03 20:27:06 by rgilles          ###   ########.fr       */
+/*   Created: 2021/09/30 15:58:02 by rgilles           #+#    #+#             */
+/*   Updated: 2021/09/30 16:40:42 by rgilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Zombie.hpp>
+#include <iostream>
+#include <Fixed.hpp>
 
-Zombie* zombieHorde(int N, std::string name);
-
-int	main(void)
+int main(void)
 {
-	Zombie*	horde;
-
-	horde = zombieHorde(10, "Mr. Brainz");
-	for (int i = 0; i < 10; i++)
-		horde[i].announce();
-	delete [] horde;
+	Fixed a;
+	Fixed b(a);
+	Fixed c;
+	c = b; //c.operator=(b);
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
+	return (0);
 }

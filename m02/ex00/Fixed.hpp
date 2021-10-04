@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/09 00:24:24 by rgilles           #+#    #+#             */
-/*   Updated: 2021/10/03 20:27:06 by rgilles          ###   ########.fr       */
+/*   Created: 2021/09/30 15:57:52 by rgilles           #+#    #+#             */
+/*   Updated: 2021/09/30 16:41:47 by rgilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Zombie.hpp>
+#ifndef FIXED_HPP
+# define FIXED_HPP
+# include <iostream>
 
-Zombie* zombieHorde(int N, std::string name);
+class Fixed {
+public:
+	Fixed();
+	Fixed(const Fixed& src);
+	Fixed& operator=(const Fixed& src);
+	~Fixed();
+	int	getRawBits(void) const;
+	void	setRawBits(const int raw);
+private:
+	int					_raw;
+	static const int	_nbFracBits = 8;
+};
 
-int	main(void)
-{
-	Zombie*	horde;
-
-	horde = zombieHorde(10, "Mr. Brainz");
-	for (int i = 0; i < 10; i++)
-		horde[i].announce();
-	delete [] horde;
-}
+#endif
