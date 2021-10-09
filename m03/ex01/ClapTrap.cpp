@@ -6,7 +6,7 @@
 /*   By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 04:23:46 by rgilles           #+#    #+#             */
-/*   Updated: 2021/10/09 13:51:09 by rgilles          ###   ########.fr       */
+/*   Updated: 2021/10/09 13:51:11 by rgilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,9 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	this->_hitPts += amount;
 	this->_energyPts += amount;
 	std::cout << "ClapTrap " << this->_name << " gets back " << amount << " HPs and EPs! HP: " << this->_hitPts << ", EP: " << this->_energyPts << std::endl;
+}
+
+void	ClapTrap::rename(const std::string& newname)
+{
+	this->_name = newname;
 }

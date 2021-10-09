@@ -64,3 +64,8 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	this->_energyPts += amount;
 	std::cout << "ClapTrap " << this->_name << " gets back " << amount << " HPs and EPs! HP: " << this->_hitPts << ", EP: " << this->_energyPts << std::endl;
 }
+
+void	ClapTrap::rename(const std::string& newname)
+{
+	this->_name = newname;
+}
