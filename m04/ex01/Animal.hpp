@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/06 04:23:45 by rgilles           #+#    #+#             */
-/*   Updated: 2021/10/10 18:00:14 by rgilles          ###   ########.fr       */
+/*   Created: 2021/10/10 17:56:39 by rgilles           #+#    #+#             */
+/*   Updated: 2021/10/12 15:53:50 by rgilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAP_TRAP_HPP
-# define CLAP_TRAP_HPP
-
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 # include <iostream>
 
-class ClapTrap
+class Animal
 {
 public:
-	ClapTrap(const std::string& name);
-	ClapTrap(const ClapTrap& src);
-	~ClapTrap();
+	Animal();
+	Animal(const Animal& src);
+	virtual ~Animal();
+	Animal&	operator=(const Animal& src);
 
-	ClapTrap&	operator=(const ClapTrap& rhm);
-	void		attack(const std::string& target);
-	void		takeDamage(unsigned int amount);
-	void		beRepaired(unsigned int amount);
-	void		rename(const std::string& newname);
+	std::string	getType() const;
+	virtual void		makeSound() const;
 protected:
-	std::string _name;
-	int	_hitPts;
-	int	_energyPts;
-	int	_attackDmg;
+	std::string	_type;
 };
 
 #endif

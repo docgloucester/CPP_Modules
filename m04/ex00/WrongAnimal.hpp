@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/06 04:23:45 by rgilles           #+#    #+#             */
-/*   Updated: 2021/10/10 18:00:14 by rgilles          ###   ########.fr       */
+/*   Created: 2021/10/10 17:57:07 by rgilles           #+#    #+#             */
+/*   Updated: 2021/10/12 15:21:43 by rgilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAP_TRAP_HPP
-# define CLAP_TRAP_HPP
-
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 # include <iostream>
 
-class ClapTrap
+class WrongAnimal
 {
 public:
-	ClapTrap(const std::string& name);
-	ClapTrap(const ClapTrap& src);
-	~ClapTrap();
+	WrongAnimal();
+	WrongAnimal(const WrongAnimal& src);
+	virtual ~WrongAnimal();
+	WrongAnimal&	operator=(const WrongAnimal& src);
 
-	ClapTrap&	operator=(const ClapTrap& rhm);
-	void		attack(const std::string& target);
-	void		takeDamage(unsigned int amount);
-	void		beRepaired(unsigned int amount);
-	void		rename(const std::string& newname);
+	std::string	getType() const;
+	void		makeSound() const;
 protected:
-	std::string _name;
-	int	_hitPts;
-	int	_energyPts;
-	int	_attackDmg;
+	std::string	_type;
 };
 
 #endif

@@ -6,16 +6,16 @@
 #    By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/04 14:47:57 by rgilles           #+#    #+#              #
-#    Updated: 2021/10/12 14:41:37 by rgilles          ###   ########.fr        #
+#    Updated: 2021/10/12 14:41:40 by rgilles          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =		DiamondTrap
+NAME =		Polymorphism
 CPPC =		clang++
 CPPFLAGS =	-Wall -Wextra -Werror -std=c++98 -g3 -I.
 
-INCL =		ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
-SRCS =		main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
+INCL =		Animal.hpp Dog.hpp Cat.hpp WrongAnimal.hpp WrongCat.hpp
+SRCS =		Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp main.cpp
 OBJS =		${SRCS:.cpp=.o}
 
 
