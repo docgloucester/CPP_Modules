@@ -6,15 +6,15 @@
 /*   By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 16:52:01 by rgilles           #+#    #+#             */
-/*   Updated: 2021/10/20 17:06:50 by rgilles          ###   ########.fr       */
+/*   Updated: 2021/10/21 14:30:28 by rgilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Form.hpp>
+#include <Bureaucrat.hpp>
 
 Form::Form(std::string name, int sgrade, int egrade) : _name(name), _signingGrade(sgrade), _execGrade(egrade), _isSigned(false)
 {
-	if (sgrade >= 1 && sgrade <= 150)
+	if (sgrade >= 1 && sgrade <= 150 && egrade >=1 && egrade <= 150)
 	{
 		std::cout << "Created";
 		if (this->_name.empty())
@@ -23,7 +23,7 @@ Form::Form(std::string name, int sgrade, int egrade) : _name(name), _signingGrad
 			std::cout << " Form " << this->_name;
 		std::cout << " with signing grade " << this->_signingGrade << std::endl;
 	}
-	else if (sgrade > 150)
+	else if (sgrade > 150 || egrade > 150)
 		throw Form::GradeTooLowException();
 	else
 		throw Form::GradeTooHighException();
@@ -80,7 +80,7 @@ bool	Form::isSigned(void) const
 
 void	Form::beSigned(Bureaucrat& agent) 
 {
-	if (agent.Grade <= this->_signingGrade)
+	if (agent.getGrade() <= this->_signingGrade)
 		this->_isSigned = true;
 	else
 		throw Form::GradeTooLowException();
@@ -89,14 +89,14 @@ void	Form::beSigned(Bureaucrat& agent)
 std::ostream&	operator<<(std::ostream &stream, const Form& src)
 {
 	if (!src.getName().empty())
-			std::cout << src.getName();
+			stream << "Form " << src.getName();
 	else
-			std::cout << "Unnamed form";
+			stream << "Unnamed form";
 	stream << ", form of signing grade " << src.getSigningGrade()
 		<< " and of execution grade " << src.getExecGrade();
 	if (src.isSigned())
-		std::cout << ", signed." << std::endl;
+		stream << ", signed." << std::endl;
 	else
-		std::cout << ", unsigned." << std::endl;
+		stream << ", unsigned." << std::endl;
 	return (stream);
 }

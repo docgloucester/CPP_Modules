@@ -6,7 +6,7 @@
 /*   By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 15:01:58 by rgilles           #+#    #+#             */
-/*   Updated: 2021/10/20 17:06:40 by rgilles          ###   ########.fr       */
+/*   Updated: 2021/10/21 14:30:31 by rgilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,25 @@
 
 int	main(void)
 {
-	Bureaucrat	unnamed;
 	Bureaucrat	marcel("Marcel", 150);
-	Bureaucrat	jean_gui("Jean-Guillaume", 1);
+	Form		unnamedform;
+	Form		myForm("A38", 10, 10);
 	std::cout << std::endl;
 	
-	std::cout << "***Exception at creation demo***" << std::endl;
+	std::cout << "***Exception at form creation demo***" << std::endl;
+	std::cout << "**Signing grade too low**" << std::endl;
 	try
 	{
-		Bureaucrat	nulos("Nulos", 170);
+		Form	nulos("Nulos", 170, 10);
 	}
 	catch (std::exception& e)
 	{
 		std::cout << e.what()<< std::endl;
 	}
-
+	std::cout << "**Execution grade too low**" << std::endl;
 	try
 	{
-		Bureaucrat	nulos2("Nulos", 0);
+		Form	nulos2("Nulos", 10, 170);
 	}
 	catch (std::exception& e)
 	{
@@ -40,31 +41,23 @@ int	main(void)
 	std::cout << std::endl;
 
 
-	std::cout << "***Exception at increasing demo***" << std::endl;
-	marcel.increaseGrade(100);
+	std::cout << "***Exception at signing demo***" << std::endl;
+	std::cout << "**Signing legit form**" << std::endl;
+	marcel.signForm(unnamedform);
+	std::cout << "**Signing form with signing grade too high**" << std::endl;
 	try
 	{
-		marcel.increaseGrade(100);
+		marcel.signForm(myForm);
 	}
 	catch (std::exception& e)
 	{
 		std::cout << e.what()<< std::endl;
 	}
-	std::cout << marcel << std::endl;
-	std::cout << std::endl;
-
-
-	std::cout << "***Exception at decreasing demo***" << std::endl;
-	jean_gui.decreaseGrade(100);
-	try
-	{
-		jean_gui.decreaseGrade(100);
-	}
-	catch (std::exception& e)
-	{
-		std::cout << e.what()<< std::endl;
-	}
-	std::cout << jean_gui << std::endl;
+	std::cout << myForm << std::endl;
+	std::cout << "Resolution :" << std::endl;
+	marcel.increaseGrade(140);
+	marcel.signForm(myForm);
+	std::cout << myForm << std::endl;
 	std::cout << std::endl;
 	
 	return (0);

@@ -6,16 +6,16 @@
 #    By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/04 14:47:57 by rgilles           #+#    #+#              #
-#    Updated: 2021/10/20 17:05:28 by rgilles          ###   ########.fr        #
+#    Updated: 2021/10/21 14:30:35 by rgilles          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =		bureaucrat00
+NAME =		bureaucrat01
 CPPC =		clang++
 CPPFLAGS =	-Wall -Wextra -Werror -std=c++98 -g3 -I.
 
-INCL =		Bureaucrat.hpp Form.hpp
-SRCS =		Bureaucrat.cpp Form.cpp main.cpp
+INCL =		Form.hpp Bureaucrat.hpp
+SRCS =		Form.cpp Bureaucrat.cpp main.cpp
 OBJS =		${SRCS:.cpp=.o}
 
 

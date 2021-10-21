@@ -6,7 +6,7 @@
 /*   By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 13:51:10 by rgilles           #+#    #+#             */
-/*   Updated: 2021/10/20 17:06:33 by rgilles          ###   ########.fr       */
+/*   Updated: 2021/10/21 14:28:41 by rgilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,11 +103,21 @@ void	Bureaucrat::signForm(Form& form)
 	try
 	{
 		form.beSigned(*this);
+		if (this->_name.empty())
+			std::cout << "Unnamed Bureaucrat";
+		else
+			std::cout << "Bureaucrat " << this->_name;
+		std::cout << " signs ";
+		if (!form.getName().empty())
+			std::cout << "form " << form.getName();
+		else
+			std::cout << "an unnamed form";
+		std::cout << std::endl;
 	}
-	catch (std::exception e)
+	catch (std::exception& e)
 	{
 		if (this->_name.empty())
-			std::cout << "Unnamed Bureaucrat"; // make the besigned function print "<bureaucrat> signs <form>"
+			std::cout << "Unnamed Bureaucrat";
 		else
 			std::cout << "Bureaucrat " << this->_name;
 		std::cout << " cannot sign because " << e.what() << std::endl;
