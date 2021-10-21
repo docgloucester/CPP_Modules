@@ -29,6 +29,7 @@ int	main(void)
 	{
 		std::cout << e.what()<< std::endl;
 	}
+
 	std::cout << "**Execution grade too low**" << std::endl;
 	try
 	{
@@ -42,19 +43,10 @@ int	main(void)
 
 
 	std::cout << "***Exception at signing demo***" << std::endl;
-	std::cout << "**Signing legit form**" << std::endl;
-	marcel.signForm(unnamedform);
-	std::cout << "**Signing form with signing grade too high**" << std::endl;
-	try
-	{
-		marcel.signForm(myForm);
-	}
-	catch (std::exception& e)
-	{
-		std::cout << e.what()<< std::endl;
-	}
+	std::cout << "**Signing form with signing grade higher than bureaucrat**" << std::endl;
+	marcel.signForm(myForm);
 	std::cout << myForm << std::endl;
-	std::cout << "Resolution :" << std::endl;
+	std::cout << "**Resolution :**" << std::endl;
 	marcel.increaseGrade(140);
 	marcel.signForm(myForm);
 	std::cout << myForm << std::endl;
