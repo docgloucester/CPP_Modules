@@ -10,12 +10,12 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME =		easyfind
+NAME =		span
 CPPC =		c++
 CPPFLAGS =	-Wall -Wextra -Werror -std=c++98 -g3 -I.
 
-INCL =		easyfind.hpp
-SRCS =		main.cpp
+INCL =		Span.hpp
+SRCS =		Span.cpp main.cpp
 OBJS =		${SRCS:.cpp=.o}
 
 
