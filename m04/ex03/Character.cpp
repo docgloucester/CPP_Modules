@@ -12,7 +12,7 @@
 
 #include <Character.hpp>
 
-Character::Character(std::string name) : _name(name)
+Character::Character(std::string name = "default") : _name(name)
 {
 	for (int i = 0; i < 4; i++)
 		this->_slots[i] = 0;
