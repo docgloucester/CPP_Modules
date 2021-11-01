@@ -6,12 +6,12 @@
 #    By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/04 14:47:57 by rgilles           #+#    #+#              #
-#    Updated: 2021/10/23 20:47:35 by rgilles          ###   ########.fr        #
+#    Updated: 2021/11/01 15:29:43 by rgilles          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =		identifier
-CPPC =		clang++
+CPPC =		c++
 CPPFLAGS =	-Wall -Wextra -Werror -std=c++98 -g3 -I.
 
 INCL =		

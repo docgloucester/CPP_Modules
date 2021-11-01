@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME =		Polymorphism
-CPPC =		clang++
+CPPC =		c++
 CPPFLAGS =	-Wall -Wextra -Werror -std=c++98 -g3 -I.
 
 INCL =		Animal.hpp Dog.hpp Cat.hpp WrongAnimal.hpp WrongCat.hpp

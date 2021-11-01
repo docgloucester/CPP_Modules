@@ -6,12 +6,12 @@
 #    By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/04 14:47:57 by rgilles           #+#    #+#              #
-#    Updated: 2021/10/12 14:41:40 by rgilles          ###   ########.fr        #
+#    Updated: 2021/11/01 15:29:37 by rgilles          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =		serial
-CPPC =		clang++
+CPPC =		c++
 CPPFLAGS =	-Wall -Wextra -Werror -std=c++98 -g3 -I.
 
 INCL =		

@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME =		bureaucrat00
-CPPC =		clang++
+CPPC =		c++
 CPPFLAGS =	-Wall -Wextra -Werror -std=c++98 -g3 -I.
 
 INCL =		Bureaucrat.hpp

@@ -6,12 +6,12 @@
 #    By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/04 14:47:57 by rgilles           #+#    #+#              #
-#    Updated: 2021/10/21 19:04:32 by rgilles          ###   ########.fr        #
+#    Updated: 2021/11/01 15:28:57 by rgilles          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =		bureaucrat03
-CPPC =		clang++
+CPPC =		c++
 CPPFLAGS =	-Wall -Wextra -Werror -std=c++98 -g3 -I.
 
 INCL =		Form.hpp PresidentialPardonForm.hpp RobotomyRequestForm.hpp\
