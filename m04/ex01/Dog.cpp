@@ -6,7 +6,7 @@
 /*   By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 17:56:47 by rgilles           #+#    #+#             */
-/*   Updated: 2021/10/12 16:45:29 by rgilles          ###   ########.fr       */
+/*   Updated: 2021/11/02 15:12:00 by rgilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Dog::Dog()
 	std::cout << "Dog created" << std::endl;
 }
 
-Dog::Dog(const Dog& src) 
+Dog::Dog(const Dog& src) : Animal()
 {
 	this->_brain = new Brain(*src._brain);
 	this->_type = src._type;

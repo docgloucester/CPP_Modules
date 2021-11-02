@@ -18,7 +18,7 @@ Cat::Cat()
 	std::cout << "Cat created" << std::endl;
 }
 
-Cat::Cat(const Cat& src) 
+Cat::Cat(const Cat& src) : Animal()
 {
 	*this = src;
 	std::cout << "Cat created by copy" << std::endl;

@@ -18,7 +18,7 @@ WrongCat::WrongCat()
 	std::cout << "WrongCat created" << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat& src) 
+WrongCat::WrongCat(const WrongCat& src) : WrongAnimal()
 {
 	*this = src;
 	std::cout << "WrongCat created by copy" << std::endl;

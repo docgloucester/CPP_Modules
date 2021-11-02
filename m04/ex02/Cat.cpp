@@ -6,7 +6,7 @@
 /*   By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 17:56:55 by rgilles           #+#    #+#             */
-/*   Updated: 2021/10/12 16:56:18 by rgilles          ###   ########.fr       */
+/*   Updated: 2021/11/02 11:55:56 by rgilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Cat::Cat()
 	std::cout << "Cat created" << std::endl;
 }
 
-Cat::Cat(const Cat& src) 
+Cat::Cat(const Cat& src) : AAnimal()
 {
 	*this = src;
 	std::cout << "Cat created by copy" << std::endl;

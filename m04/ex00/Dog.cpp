@@ -18,7 +18,7 @@ Dog::Dog()
 	std::cout << "Dog created" << std::endl;
 }
 
-Dog::Dog(const Dog& src) 
+Dog::Dog(const Dog& src) : Animal()
 {
 	*this = src;
 	std::cout << "Dog created by copy" << std::endl;

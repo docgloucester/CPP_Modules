@@ -6,7 +6,7 @@
 /*   By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 17:56:55 by rgilles           #+#    #+#             */
-/*   Updated: 2021/10/12 16:27:40 by rgilles          ###   ########.fr       */
+/*   Updated: 2021/11/02 15:11:56 by rgilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ Cat::Cat()
 	std::cout << "Cat created" << std::endl;
 }
 
-Cat::Cat(const Cat& src) 
+Cat::Cat(const Cat& src) : Animal()
 {
-	this->_brain = new Brain;
-	*this = src;
+	this->_brain = new Brain(*src._brain);
+	this->_type = src._type;
 	std::cout << "Cat created by copy" << std::endl;
 }
 

@@ -6,7 +6,7 @@
 /*   By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 17:56:47 by rgilles           #+#    #+#             */
-/*   Updated: 2021/10/12 16:56:20 by rgilles          ###   ########.fr       */
+/*   Updated: 2021/11/02 11:55:19 by rgilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Dog::Dog()
 	std::cout << "Dog created" << std::endl;
 }
 
-Dog::Dog(const Dog& src) 
+Dog::Dog(const Dog& src) : AAnimal()
 {
 	*this = src;
 	std::cout << "Dog created by copy" << std::endl;
