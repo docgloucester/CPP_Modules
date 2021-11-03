@@ -6,7 +6,7 @@
 /*   By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 20:31:44 by rgilles           #+#    #+#             */
-/*   Updated: 2021/10/23 20:38:29 by rgilles          ###   ########.fr       */
+/*   Updated: 2021/11/03 18:01:52 by rgilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int main (void)
 
 	std::cout << "data string: " << data.string << std::endl;
 	std::cout << "data address: " << &data << std::endl;
-	std::cout << "uintptr value: " << pointer << std::endl;
+	std::cout << "uintptr value: " << std::hex << pointer << " ("<< std::dec << pointer << ")" << std::endl;
 	std::cout << "new data pointer: " << res << std::endl;
 	std::cout << "res str: " << res->string << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 16:33:09 by rgilles           #+#    #+#             */
-/*   Updated: 2021/10/24 00:20:29 by rgilles          ###   ########.fr       */
+/*   Updated: 2021/11/03 17:51:43 by rgilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,16 @@
 # include <cmath>
 # include <limits>
 
+bool	is_all_digits(std::string str)
+{
+	std::string::iterator it = str.begin();
+	while (it != str.end() && std::isdigit(*it))
+		++it;
+	return (!str.empty() && it == str.end());
+}
+
 int main (int argc, char **argv)
 {
-	std::string	arg(argv[1]);
 	char	c;
 	int		i;
 	float	f;
@@ -25,10 +32,11 @@ int main (int argc, char **argv)
 
 	if (argc != 2)
 	{
-		std::cout << "Please provide a C++ litteral value to cast\n" << std::endl;
+		std::cout << "Please provide a C++ litteral value to cast" << std::endl;
 		return (0);
 	}
-	else if (arg.length() == 3 && argv[1][0] == '\'' && argv[1][2] == '\'')
+	std::string	arg(argv[1]);
+	if (arg.length() == 3 && argv[1][0] == '\'' && argv[1][2] == '\'')
 	{
 		c = argv[1][1];
 		i = static_cast<int>(argv[1][1]);
@@ -42,12 +50,17 @@ int main (int argc, char **argv)
 		f = static_cast<float>(argv[1][0]);
 		d = static_cast<double>(argv[1][0]);
 	}
+	else if (is_all_digits(arg))
+	{
+		c = static_cast<char>(strtod(argv[1], 0));
+		i = static_cast<int>(strtod(argv[1], 0));
+		f = static_cast<float>(strtod(argv[1], 0));
+		d = static_cast<double>(strtod(argv[1], 0));
+	}
 	else
 	{
-		c = static_cast<char>(strtod(arg.c_str(), 0));
-		i = static_cast<int>(strtod(arg.c_str(), 0));
-		f = static_cast<float>(strtod(arg.c_str(), 0));
-		d = static_cast<double>(strtod(arg.c_str(), 0));
+		std::cout << arg <<" isn't a C++ litteral value" << std::endl;
+		return (0);
 	}
 
 	std::cout << "char: ";
