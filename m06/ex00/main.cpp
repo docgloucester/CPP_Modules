@@ -6,7 +6,7 @@
 /*   By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 16:33:09 by rgilles           #+#    #+#             */
-/*   Updated: 2021/11/03 17:51:43 by rgilles          ###   ########.fr       */
+/*   Updated: 2021/11/05 01:30:18 by rgilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,20 @@
 # include <cmath>
 # include <limits>
 
-bool	is_all_digits(std::string str)
+bool	is_number(std::string str)
 {
 	std::string::iterator it = str.begin();
 	while (it != str.end() && std::isdigit(*it))
 		++it;
-	return (!str.empty() && it == str.end());
+	if (it != str.end() && *it == '.')
+	{
+		++it;
+		while (it != str.end() && std::isdigit(*it))
+			++it;
+		if (it != str.end() && *it == 'f')
+			++it;
+	}
+	return (!str.empty() && it == str.end() && *--it != '.');
 }
 
 int main (int argc, char **argv)
@@ -50,7 +58,9 @@ int main (int argc, char **argv)
 		f = static_cast<float>(argv[1][0]);
 		d = static_cast<double>(argv[1][0]);
 	}
-	else if (is_all_digits(arg))
+	else if (is_number(arg) || arg == "nan" || arg == "nanf" || arg == "+inf"
+		|| arg == "+inff" || arg == "inf" || arg == "inff" || arg == "-inf"
+		|| arg == "-inff")
 	{
 		c = static_cast<char>(strtod(argv[1], 0));
 		i = static_cast<int>(strtod(argv[1], 0));
