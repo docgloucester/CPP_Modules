@@ -6,7 +6,7 @@
 /*   By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 00:18:16 by rgilles           #+#    #+#             */
-/*   Updated: 2021/10/25 01:36:06 by rgilles          ###   ########.fr       */
+/*   Updated: 2021/11/05 17:10:25 by rgilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,13 @@ int main(int, char**)
     Array<int> numbers(MAX_VAL);
     int* mirror = new int[MAX_VAL];
     srand(time(NULL));
+
     for (int i = 0; i < MAX_VAL; i++)
     {
         const int value = rand();
         numbers[i] = value;
         mirror[i] = value;
     }
-    //SCOPE
-    {
-        Array<int> tmp = numbers;
-        Array<int> test(tmp);
-    }
-
     for (int i = 0; i < MAX_VAL; i++)
     {
         if (mirror[i] != numbers[i])
@@ -41,6 +36,8 @@ int main(int, char**)
             return 1;
         }
     }
+
+    //Out of bounds index exceptions demo
     try
     {
         numbers[-2] = 0;
@@ -58,6 +55,7 @@ int main(int, char**)
         std::cerr << e.what() << '\n';
     }
 
+    //Copy constructor & deep copy demo
     Array<int>  n2(numbers);
     for (int i = 0; i < MAX_VAL; i++)
     {
@@ -79,6 +77,18 @@ int main(int, char**)
             return 1;
         }
     }
+
+    const Array<int>    nconst(numbers);
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        if (nconst[i] != numbers[i])
+        {
+            std::cerr << "Unable to read from const instance" << std::endl;
+            return 1;
+        }
+    }
+
+
     delete [] mirror;
     return 0;
 }

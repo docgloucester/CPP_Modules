@@ -6,7 +6,7 @@
 /*   By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 17:01:48 by rgilles           #+#    #+#             */
-/*   Updated: 2021/10/24 17:30:48 by rgilles          ###   ########.fr       */
+/*   Updated: 2021/11/05 16:41:03 by rgilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	print(T& elem)
 template<typename T>
 void	increment(T& elem)
 {
-	elem++;
+	++elem;
 }
 
 #endif

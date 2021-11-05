@@ -6,7 +6,7 @@
 /*   By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 17:56:30 by rgilles           #+#    #+#             */
-/*   Updated: 2021/10/24 23:55:30 by rgilles          ###   ########.fr       */
+/*   Updated: 2021/11/05 17:05:39 by rgilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@ template<typename T>
 class Array
 {
 public:
-	Array<T>() : _size(0) {};
-	Array<T>(unsigned int n) : _size(n), _array(new T[n]) {};
+	Array<T>(unsigned int n = 0) : _size(n), _array(new T[n]()) {};
 	Array<T>(const Array<T>& src) : _size(0) {*this = src;};
 	~Array<T>() {delete [] this->_array;};
 
