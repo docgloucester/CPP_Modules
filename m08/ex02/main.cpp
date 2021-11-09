@@ -6,12 +6,13 @@
 /*   By: rgilles <rgilles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 16:24:48 by rgilles           #+#    #+#             */
-/*   Updated: 2021/10/28 23:24:39 by rgilles          ###   ########.fr       */
+/*   Updated: 2021/11/09 14:08:17 by rgilles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <stack>
+#include <list>
 #include <MutantStack.hpp>
 
 int main()
@@ -36,5 +37,28 @@ int main()
 		++it;
 	}
 	std::stack<int> s(mstack);
+
+	std::cout << std::endl;
+
+	std::list<int>	list;
+	list.push_back(5);
+	list.push_back(17);
+	std::cout << list.back() << std::endl;
+	list.pop_back();
+	std::cout << list.size() << std::endl;
+	list.push_back(3);
+	list.push_back(5);
+	list.push_back(737);
+	list.push_back(0);
+	std::list<int>::iterator itlist = list.begin();
+	std::list<int>::iterator itelist = list.end();
+	++itlist;
+	--itlist;
+	while (itlist != itelist)
+	{
+		std::cout << *itlist << std::endl;
+		++itlist;
+	}
+
 	return 0;
 }
